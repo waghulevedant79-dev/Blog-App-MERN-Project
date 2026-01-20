@@ -15,8 +15,12 @@ const app = express();
 
 app.use(express.json());
 app.use(cors({
-    origin: "*"
-}));
+    origin: [
+        'http://localhost:5173',
+        'https://blogify-mern-project.vercel.app'
+    ],
+    credentials: true
+}))
 
 app.use("/api/auth", require("./routes/authRoutes"));
 app.use("/api/blogs", require("./routes/blogRoutes"));
