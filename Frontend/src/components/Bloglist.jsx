@@ -7,7 +7,7 @@ const BlogList = () => {
 
     useEffect(() => {
         const fetchBlogs = async () => {
-            const res = await fetch("http://localhost:3000/api/blogs");
+            const res = await fetch("https://blog-app-mern-project.onrender.com/api/blogs");
             const data = await res.json();
             setBlogs(Array.isArray(data) ? data : []);
             setLoading(false);
